@@ -307,7 +307,7 @@ function(jobName, agentEnv={}, stepEnvFile='', patchFunc=identity) patchFunc({
           {
             name: 'bootstrap',
             image: env.BUILDKITE_PLUGIN_K8S_INIT_IMAGE,
-            args: ['bootstrap', '--experiment=git-mirrors', '--git-mirrors-path=/git-mirrors', '--ssh-keyscan', '--command', 'true'],
+            args: ['bootstrap', '--experiment=git-mirrors', '--git-mirrors-path=/git-mirrors', '--ssh-keyscan', '--command', 'false'],
             env: podEnv,
             envFrom: initSecretEnv,
             volumeMounts: [
